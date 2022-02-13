@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Number Game</title>
+    <style>
+        body{
+            background-image: url("./images/F2qRmLhRnmebc8jJAUjr_GuessTheNumber@3x.png");
+            background-position:center;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+
+
+        h1{
+           
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .input__container{
+            margin-top: 15%;
+            /* width:  40%; */
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center
+        }
+
+        input{
+            /* width: 15rem; */
+            height: 1.5rem;
+        }
+
+        .button1 {
+            display: flex;
+            justify-content: center;
+            
+        }
+        button{
+            background-color: red;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            width: 7rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .attemps{
+            text-align: center;
+            margin-top: 3rem;
+            
+        }
+
+    </style>
+</head>
+<body id="background">
+    <h1>GUESS THE NUMBER (1-100)</h1>
+
+    <div class="input__container"> 
+        <input type="number" name="enterednumber" id="number"  >
+        <div class="button1">
+            <button id="check">CHECK</button>
+        </div>
+        
+        <h3 id="result" style="font-size: 2rem; color: white;"></h3>
+    </div>
+    <div class="attemps">
+        <h3 id="count" style="font-size:2.5rem; color: aqua;" >Number of remaining attempts 5</h3>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
