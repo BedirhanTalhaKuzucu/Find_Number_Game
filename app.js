@@ -25,20 +25,24 @@ function findingNumber() {
             result.innerHTML = "please enter a number less than 100";
             number.value = "";
             return} 
-        closestBig = number.value
+        if (closestBig > number.value) {
+            closestBig = number.value
+        };
         result.innerHTML = `Enter a number between ${closestLow} and ${closestBig}`
     }else if (number.value < randomNumber) {
         if(number.value < 0){
             result.innerHTML = "Enter a number greater than 0";
             number.value = "";
             return};
-        closestLow = number.value
+        if (closestLow < number.value) {
+            closestLow = number.value
+        };
         result.innerHTML = `Enter a number between ${closestLow} and ${closestBig}`
     }else if(number.value == "") {
         result.innerHTML =`Please enter a Number`
     };
 
-    number.value = ""  
+     
 };
 
 
@@ -50,7 +54,9 @@ let count = 5;
 function countFunction() {
     count--;
     attempt.innerHTML = `Number of remaining attempts ${count}`;
-    if (count == 0) {
+    console.log(number.value);
+
+    if (count == 0 && (randomNumber !== +(number.value)) ) {
         attempt.innerHTML = `sorry you lost`;
         attempt.style.color = `aqua`;
         attempt.style.fontSize = `10rem`;
@@ -58,8 +64,8 @@ function countFunction() {
 
         check.disabled = true;
         result.style.display = "none"
-
     }
+    number.value = "" 
 }
 
 check.addEventListener("click", countFunction);
